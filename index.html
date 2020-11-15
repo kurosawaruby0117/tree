@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <title>7주차 자료구조 활동 보고서 -20181031</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="myInfo">
+      <h1>7주차: Tree</h1>
+      <h2>20181031 영어영문학과 이창진</h2>
+      <h5>
+        <a href="https://kurosawaruby0117.github.io/whatislist/">온라인으로 보기</a>
+      </h5>
+    </header>
+    <main>
+      <header>
+        <ul class="index__list" id="top">
+          <li class="index">
+            <span class="index_big" id="first"
+              ><a href="#main_first">1.Tree</a></span>
+            <ul class="index_small">
+              <li>
+                <span id="first_first"><a href="#main_first_first">1-1. Tree 무엇인가</a></span>
+              </li>
+            </ul>
+          </li>
+          <li class="index_big">
+            <span class="index_big" id="second"
+              ><a href="#main_second">2.이진 트리</a></span
+            >
+            <ul class="index_small">
+              <li>
+                <span id="second_one"
+                  ><a href="#main_second_first"
+                    >2-1. 이진트리의 종류 </a
+                  ></span
+                >
+              </li>
+              <li>
+                <span id="second_second"
+                  ><a href="#main_second_second"
+                    >2-2. 이진트리의 순환 종류</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="index_big">
+            <span class="index_big" id="third"
+              ><a href="#main_third">3. 느낀 점</a></span
+            >
+          </li>
+        </ul>
+      </header>
+      <div class="p_index">
+        <h2 class="p_index_title" id="main_first"><a href="#top">1. Recursion</h2>
+        <h3 class="p_index_title_sub" id="main_first_first">
+          <a href="#top">1-1. Tree 무엇인가</a>
+        </h3>
+        <p>
+          Tree, 이름만 보시면 그냥 나무임을 알 수 있습니다. <br>
+          사실 이걸 왜 트리라하는지는 잘 모르겠습니다. 차라리 뿌리 였으면 보기에도 맞는 거 같지만, 선배 엔지니어들이 그렇다고 하면 그런 거겠죠.<br>
+          <strong>들어가기 전 알아야하는 단어</strong>
+          <ul>
+            <li>
+              레벨: 트리의 각층 번호
+            </li>
+            <li>
+              높이: 트리의 최대레벨
+            </li>
+            <li>
+              차수: 노드의 자식 노드수
+            </li>
+          </ul>
+        </p>
+      <div class="p_index">
+        <h2 class="p_index_title" id="main_second">
+          <a href="#top">2. 이진 트리</a>
+        </h2>
+        <h3 class="p_index_title_sub" id="main_second_first">
+          <a href="#top">2-1.  이진트리의 종류</a>
+        </h3>
+        <p>
+          <ul>
+          <li>
+            <div style="height: 300px;">
+              <div class="node_tree">
+                <div class="node">유우</div>
+              </div>
+              <div class="node_tree">
+                <div class="node" style="margin-right: 190px;">아유무</div>
+                <div class="node">카스밍</div>
+              </div>
+              <div class="node_tree">
+                <div class="node">아이</div>
+                <div class="node">리나</div>
+                <div class="node">엠마</div>
+                <div class="node">카린</div>
+              </div>
+            </div>
+            <p>
+              이렇게 각 노드당 두개씩 찬 트리를 포화트리라고 합니다.
+            </p>
+          </li>
+          <li>
+            <img src="zettainitree.PNG"/>
+            <p>
+              마지막 높이가 h일때 레벨 1부터 h-1 까지는 노드가 모드 채워지고, 마지막 레벨에서는 노드가 순서대로 채워지는 걸 트리를 의미합니다.
+            </p>
+          </li>
+          </ul>
+        </p>
+        
+        </div> 
+        <h3 class="p_index_title_sub" id="main_second_second">
+          <a href="#top">2-2. 이진트리의 순환 종류</a>
+         
+        </h3>
+        <p>
+          node의 구현
+          <ul>
+            <li>
+              각 노드당 왼쪽 오른쪽, 하나씩 두개만 들어갈 수 있고 자신의 왼쪽 자식은 t->left란 변수에 저장되어있고, 오른쪽은 t->right에 저장되어있음.
+            </li>
+            <li>
+              data에 그 node의 데이터가 들어가있음
+            </li>
+          </ul>
+          종류
+          <ul>
+            <li>
+              전위: 부모노드 -> 왼쪽 자식 노드 -> 오른쪽 자식 노드
+            </li>
+            <li>
+              중위: 왼쪽 자식 노드 -> 부모노드 -> 오른쪽 자식 노드
+            </li>
+            <li>
+              후위: 왼쪽 자식 노드 -> 오른쪽 자식 노드 -> 부모노드
+            </li>
+          </ul>
+          <div class="codeBox" style="background-color:#272822; height: 700px; width: 910px; font-size: 20px; color:white; font-family: 'Roboto Mono', monospace; position: relative;">
+            <div class="main" style="margin-top: 30px;"><span>void </span><span>front_processing( node *t )</span><span>{</span></div>
+              <div class="source" style="margin-left: 30px;">
+                <span>if (t != tail) {</span>
+            </div>
+            <div class="source" style="margin-left: 50px;">
+              <span>print( t -> data ); </span>
+          </div>
+          <div class="source" style="margin-left: 50px;">
+            <span>front_processing(t -> left); </span>
+        </div>
+        <div class="source" style="margin-left: 50px;">
+          <span>front_processing(t -> right); </span>
+      </div>
+  <div class="source" style="margin-left: 30px;">
+    <span>}</span>
+  </div>
+  <div class="source" style="margin-top: 10px;">}</div>
+  <div class="main" style="margin-top: 30px;"><span>void </span><span>middle_processing( node *t )</span><span>{</span></div>
+    <div class="source" style="margin-left: 30px;">
+      <span>if (t != tail) {</span>
+  </div>
+  <div class="source" style="margin-left: 50px;">
+    <span>middle_processing(t -> left); </span>
+</div>
+<div class="source" style="margin-left: 50px;">
+  <span>print( t -> data ); </span>
+</div>
+<div class="source" style="margin-left: 50px;">
+<span>middle_processing(t -> right); </span>
+</div>
+<div class="source" style="margin-left: 30px;">
+<span>}</span>
+</div>
+      
+    <div class="source" style="margin-top: 10px;">}</div>
+    <div class="main" style="margin-top: 30px;"><span>void </span><span>after_processing( node *t )</span><span>{</span></div>
+      <div class="source" style="margin-left: 30px;">
+        <span>if (t != tail) {</span>
+    </div>
+    <div class="source" style="margin-left: 50px;">
+      <span>after_processing(t -> left); </span>
+  </div>
+  <div class="source" style="margin-left: 50px;">
+    <span>after_processing(t -> right);  </span>
+  </div>
+  <div class="source" style="margin-left: 50px;">
+    <span>print( t -> data ); </span>
+  
+  </div>
+  <div class="source" style="margin-left: 30px;">
+  <span>}</span>
+  </div>
+        
+      <div class="source" style="margin-top: 10px;">}</div>
+</div>
+    사실 전위,중위,후위는 자신의 노드의 값을 언제 찍냐의 차이입니다. 
+  </p>
+    <h3 id="main_third"><a href="#top">3. 느낀점</a></h3>
+        <p>
+        처음해보는 비선형 구조라, 원리 위주의 수업이라 그런지 공부할때 피곤함이 많이 느껴졌습니다. 익숙해지면 안 그러겠죠? 라는 믿음으로 공부하겠습니다.
+        </p>
+      </div>
+    </main>
+    <script type="text/javascript" src="script2.js"></script>
+    <script src="https://kit.fontawesome.com/4a1f21abe5.js" crossorigin="anonymous"></script>
+  </body>
+</html>
